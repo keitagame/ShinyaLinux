@@ -6,6 +6,7 @@ mkdir -p build/chroot
 debootstrap --arch=amd64 bookworm build/chroot http://debian.org
 cat <<EOF | sudo chroot build/chroot /bin/bash
 apt update
+
 # カーネルとライブ起動用ツールは必須
 apt install -y linux-image-amd64 live-boot network-manager
 # 好きなデスクトップ環境など
